@@ -13,7 +13,19 @@ li{
 section{
     background-color: rgb(245, 245, 245);
 }
-
+p{
+    line-height: 1.5;
+    font-size: 16px;
+}
+.title{
+    font-size: 120px;
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1;
+}
+.blue{
+    color: rgb(11, 117, 184); impornt !important
+}
 /* 
 
 Landing
@@ -32,7 +44,10 @@ Landing
     max-width: 1000px;
     
 }
-
+.header__para{
+    font-size: 24px;
+    line-height: 2;
+}
 
 /* 
 
@@ -69,3 +84,4 @@ nav{
 .fa-adjust{
     font-size: 20px;
 }
+
