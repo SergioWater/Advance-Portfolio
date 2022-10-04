@@ -30,6 +30,8 @@ a{
     text-decoration: none;
 
 }
+
+
 .container{
     padding: 50px 0;
     width: 100%;
@@ -104,6 +106,22 @@ textarea{
     height: 100px;
     margin-top: 8px;
 }
+nav,
+.scroll,
+.header{
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 600ms;
+}
+.modal--open nav,
+.modal--open .scroll,
+.modal--open .header{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
+
 /* 
 
 Landing
@@ -229,6 +247,11 @@ nav{
 MODAL
 
 */
+.modal--open .modal{
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0,0.55);
+    visibility: visible;
+ }
 .modal{
     position: absolute;
     top: 50%;
@@ -237,10 +260,12 @@ MODAL
     width: 90%;
     max-width: 1100px;
     height: 700px;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0,0.55);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 }
 .modal__half{
     width: 50%;
@@ -249,10 +274,17 @@ MODAL
     flex-direction: column;
     justify-content: center;
     position: relative;
+    transition: all 300ms ease-in;
 }
+
+.modal--open .modal__about,
+.modal--open .modal__contact{
+    transform: translateX(0%);
+}
+
 .modal__about{
     background-color: rgb(245, 245, 245);
-
+    transform: translateX(-110%);
 
 }
 .modal__languages{
@@ -290,6 +322,7 @@ MODAL
 .modal__contact{
     background-color: #242424;
     color: white;
+    transform: translateX(110%);
 }
 
 .modal__title{
@@ -332,7 +365,7 @@ MODAL
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: -1;
@@ -355,7 +388,7 @@ MODAL
 }
 .modal__overlay--visible{
     z-index: 1;
-
+    display: flex;
 }
 @keyframes spinner {
     0%{
