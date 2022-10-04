@@ -12,6 +12,7 @@ li{
 
 section{
     background-color: rgb(245, 245, 245);
+    transition: all 300ms ease;
 }
 p{
     line-height: 1.5;
@@ -120,8 +121,33 @@ nav,
     visibility: hidden;
     transition: all 400ms;
 }
-
-
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-adjust,
+.dark-theme .header__para
+{
+    color: white;
+}
+.dark-theme section{
+    background-color: #242424;
+}
+.dark-theme #personal-logo{
+    filter: invert(1);
+}
+.dark-theme .scroll__icon{
+    border-color: #fff;
+}
+.dark-theme .scroll__icon:after,
+.dark-theme .link__hover-effect--black:after
+{
+    background-color: #fff;
+}
+.dark-theme .mail__btn{
+    background-color: white;
+    color: #242424;
+}
 /* 
 
 Landing
@@ -498,6 +524,7 @@ footer{
 }
 .footer__logo--img{
     width: 100px;
+    filter: invert(1);
     
 }
 .footer__social--list{
